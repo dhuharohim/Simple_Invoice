@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Invoice</title>
+    <!--Custom style-->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div class="my-5 page" size="A4" id="Invoice">
+        <div class="p-5">
+            <section class="top-content bb d-flex justify-content-between">
+                <div class="logo">
+                    <img src="/img/bill.png" alt="" class="img-fluid">
+                </div>
+                <div class="top-left">
+                    <div class="graphic-path">
+                        <p>Invoice</p>
+                    </div>
+                    <div class="position-relative">
+                        <p>Invoice No. <span> XXXX</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="store-user mt-5">
+                <div class="col-10">
+                    <div class="row bb pb-3">
+                        <div class="col-7">
+                            <p>Supplier,</p>
+                            <h2>CV Adimitra Perdana</h2>
+                            <p class="adress">Komplek Ruko Ifolia blok HY 46 no.46, Pusaka Rakyat, Kec. Tarumajaya, Bekasi, Jawa Barat, 17214</p>
+                        </div>
+                        <div class="col-5">
+                            <p>Client,</p>
+                            <h2>Dhuha Rohim</h2>
+                            <p class="adress">Jl. Panglima Polim Perumda Blok ML-5, Sumbang, Bojonegoro, Jawa Timur, 62115</p>
+                        </div>
+                    </div>
+                    <div class="row extra-info pt-3">
+                        <div class="col-7">
+                            <p>Payment Method : 
+                                <span>Cash</span>
+                            </p>
+                            <p>Order Number : 
+                                <span>#01</span>
+                            </p>
+                        </div>
+                        <div class="col-5">
+                            <p>Deliver Date: 
+                                <span>26/10/2021</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-area mt-4">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>Item Description</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <img class="mr-3 img-fluid" img-fluid src="/img/medium_tips-menyimpan-tepung-agar-tetap-awet-dan-tahan-lama.jpg" alt="Product 01">
+                                    <div class="media-body">
+                                      <p class="mt-0 title">Tepung</p>
+                                      Deskripsi Tepung
+                                    </div>
+                                  </div>
+                            </td>
+                            <td>Rp. 1500</td>
+                            <td>2</td>
+                            <td>Rp. 3000</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <img class="mr-3 img-fluid" src="/img/Mentega--ISTOCK_ratio-16x9.jpg" alt="Product 02">
+                                    <div class="media-body">
+                                      <p class="mt-0 title">Mentega</p>
+                                      Deskripsi Mentega 
+                                    </div>
+                                  </div>
+                            </td>
+                            <td>Rp. 5500</td>
+                            <td>2</td>
+                            <td>Rp. 11000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section class="balance-info">
+                <div class="row">
+                    <div class="col-8">
+                        <p class="note">Note:</p>
+                        <p class="desc">Deskripsi Note</p>
+                    </div>
+                    <div class="col-4">
+                        <table class="table border-0 table-hover">
+                            <tr>
+                                <td>Sub Total:</td>
+                                <td>Rp. 14000</td>
+                            </tr>
+                            <tr>
+                                <td>Tax:</td>
+                                <td>Rp. 2000</td>
+                            </tr>
+                            <tr>
+                                <td>Deliver:</td>
+                                <td>Rp. 25000</td>
+                            </tr>
+                            <tfoot>
+                                <tr>
+                                    <td>Total:</td>
+                                    <td>Rp. 41000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="col-11 mt-5">
+                            <img src="/img/178019.png" class="img-fluid" alt="Signature">
+                                <p class="text-center m-0"> Mahasiswa KP </p> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <hr>
+                <button onclick="generatePDF()" class="m-0 text-center">
+                    Download as PDF
+                </button>
+                <div class="social pt-3">
+                    <span class="pr-2">
+                        <i class="fas fa-mobile"></i>
+                        <span>(+62)82229011758</span>
+                    </span>
+                    <span class="pr-2">
+                        <span>instagram.com/cmd.exee</span>
+                    </span>
+                    <span class="pr-2">
+                        <span>github.com/dhuharohim</span>
+                    </span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
